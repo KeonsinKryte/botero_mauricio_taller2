@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'HelveticaLTStd';
+    src: url("../sources/fonts/HelveticaLTStd/HelveticaLTStd-BlkCond.otf");
+}
+
+@font-face {
+    font-family: 'Eksell-large';
+    src: url("../sources/fonts/EksellDisplay/Eksell\ Display\ Large.otf");
+}
+
+@font-face {
+    font-family: 'Eksell-small';
+    src: url("../sources/fonts/EksellDisplay/Eksell\ Display\ Small.otf");
+}
+
+@import url("https://use.typekit.net/sja4yzg.css");
+$font-eksell-small: 'Eksell-small';
+$font-eksell-large: 'Eksell-large';
+$font-helveticaltstd-blkcnd: 'HelveticaLTStd';
+$vnyl-color: #ff0090;
+$vnyl-text-color: #666666;
+h1 {
+    font-family: $font-eksell-large;
+    font-weight: 100;
+    font-size: 6vw;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+h2 {
+    font-family: $font-helveticaltstd-blkcnd;
+    font-size: 4vw;
+    color: $vnyl-color;
+    text-align: center;
+    display: block;
+}
+
+h3 {
+    font-family: 'HelveticaLTStd';
+    font-size: 2vw;
+    color: black;
+    text-align: center;
+    display: block;
+}
+
+h4 {
+    font-family: $font-eksell-large;
+    font-weight: 100;
+    font-size: 25px;
+    color: white;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+p {
+    font-family: 'Eksell';
+    font-size: 1.5vw;
+    color: $vnyl-text-color;
+    text-align: center;
+    display: block;
+}
+
+body {
+    margin: 0px;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid white;
+    color: white; 
+    font-size: 36px;
+    letter-spacing: -1px;
+    outline: 0;
+    padding: 5px 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    width: 500px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+input::placeholder{
+    color: white;
+    opacity: 0.5;
+}
+
+button {
+    width: fit-content 100px;
+    z-index: 30;
+    background: none;
+    border: 2px solid;
+    border-bottom-width: 4px;
+    font: inherit;
+    letter-spacing: inherit;
+    margin: 1em;
+    padding: 1em 2em;
+    text-transform: inherit;
+    transition: color 1s;
+    $color: #82f6d8;
+    color: $color;
+    &:hover {
+        animation: stripes-move 0.75s infinite linear;
+        background: repeating-linear-gradient(45deg, $color 0, $color 0.25em, transparent 0.25em, transparent .5em);
+        color: adjust-hue($color, 180);
+    }
+}
+@keyframes stripes-move {
+    100% {
+        background-position: 5em 0px;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    h1 {
+        font-family: $font-eksell-large;
+        font-weight: 100;
+        font-size: 8vw;
+        color: white;
+        display: block;
+        text-align: center;
+    }
+    h2 {
+        font-family: $font-helveticaltstd-blkcnd;
+        font-size: 6vw;
+        color: $vnyl-color;
+        text-align: center;
+        display: block;
+    }
+    h3 {
+        font-family: 'HelveticaLTStd';
+        font-size: 4vw;
+        color: black;
+        text-align: center;
+        display: block;
+    }
+    h4 {
+        font-family: $font-eksell-large;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        display: block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    p {
+        font-family: 'Eksell';
+        font-size: 3vw;
+        color: $vnyl-text-color;
+        text-align: center;
+        display: block;
+    }
+}
+
+@media screen and(max-width: 400px) {
+    h1 {
+        font-family: $font-eksell-large;
+        font-weight: 100;
+        font-size: 10vw;
+        color: white;
+        display: block;
+        text-align: center;
+    }
+    h2 {
+        font-family: $font-helveticaltstd-blkcnd;
+        font-size: 8vw;
+        color: $vnyl-color;
+        text-align: center;
+        display: block;
+    }
+    h3 {
+        font-family: 'HelveticaLTStd';
+        font-size: 6vw;
+        color: black;
+        text-align: center;
+        display: block;
+    }
+    h4 {
+        font-family: $font-eksell-large;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        display: block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    p {
+        font-family: 'Eksell';
+        font-size: 5vw;
+        color: $vnyl-text-color;
+        text-align: center;
+        display: block;
+    }
+}
+
+@import "./_menu.scss";
+@import "./_header.scss";
+@import "./_chunk.scss";
+@import "./_footer.scss";

@@ -1,0 +1,374 @@
+.chunk {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    .split-chunk {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        &__left {
+            width: 50%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            flex-flow: column;
+            background-color: white;
+            text-align: center;
+            overflow: hidden;
+            overflow-y: hidden;
+        }
+        &__rigth {
+            width: 50%;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            flex-flow: column;
+            background-color: white;
+            text-align: center;
+            overflow: hidden;
+            overflow-y: hidden;
+        }
+        &__text {
+            text-align: center;
+            width: 50%;
+            height: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        &__cover-b {
+            width: 150%;
+            height: auto;
+            position: relative;
+            left: 15%;
+        }
+        &__carousel {
+            position: relative;
+            top: 81px;
+            left: -39%;
+            width: 1823px;
+            transform: rotate(60deg);
+            transform-origin: 50% 50% 10px;
+            z-index: 1;
+            transition: ease-in-out 0.5s;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        &__vinyls {
+            width: 100%;
+            position: relative;
+            left: -10%;
+        }
+        .cover {
+            background-image: url("../sources/images/Background/I.Background\ \(1\).jpg");
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            background-position: 50% 0;
+            background-size: cover;
+        }
+        .background {
+            background-color: #ffffb3;
+        }
+        .dot {
+            background-image: url("../sources/images/Background/Dots.svg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            width: 50%;
+        }
+        @media screen and (max-width: 800px) {
+            &__left {
+                width: 100%;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                -ms-flex-align: center;
+                align-items: center;
+                flex-flow: column;
+                background-color: white;
+                text-align: center;
+                overflow: hidden;
+                overflow-y: hidden;
+            }
+            &__rigth {
+                width: 100%;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                -ms-flex-align: center;
+                align-items: center;
+                flex-flow: column;
+                background-color: white;
+                text-align: center;
+                overflow: hidden;
+                overflow-y: hidden;
+            }
+            &__text {
+                text-align: center;
+                width: 50%;
+                height: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            &__cover-b {
+                width: 150%;
+                height: auto;
+                position: relative;
+                left: 15%;
+            }
+            &__carousel {
+                position: relative;
+                top: -500px;
+                left: -400%;
+                width: 500%;
+                transform: rotate(60deg);
+                transform-origin: 50% 50% 10px;
+                z-index: 1;
+                transition: ease-in-out 0.5s;
+                overflow: hidden;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            &__vinyls {
+                width: 100%;
+                position: relative;
+                left: -10%;
+            }
+            .cover {
+                background-image: url("../sources/images/Background/I.Background\ \(1\).jpg");
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                background-position: 50% 0;
+                background-size: cover;
+                height: 400px;
+            }
+            .background {
+                background-color: #ffffb3;
+            }
+            .dot {
+                background-image: url("../sources/images/Background/Dots.svg");
+                background-attachment: fixed;
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                overflow: hidden;
+                overflow-x: hidden;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            &__left {
+                width: 100%;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                -ms-flex-align: center;
+                align-items: center;
+                flex-flow: column;
+                background-color: white;
+                text-align: center;
+                overflow: hidden;
+                overflow-y: hidden;
+            }
+            &__rigth {
+                width: 100%;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                -ms-flex-align: center;
+                align-items: center;
+                flex-flow: column;
+                background-color: white;
+                text-align: center;
+                overflow: hidden;
+                overflow-y: hidden;
+            }
+            &__text {
+                text-align: center;
+                width: 50%;
+                height: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            &__cover-b {
+                width: 150%;
+                height: auto;
+                position: relative;
+                left: 15%;
+            }
+            &__carousel {
+                position: relative;
+                top: -600px;
+                left: -400%;
+                width: 500%;
+                transform: rotate(60deg);
+                transform-origin: 50% 50% 10px;
+                z-index: 1;
+                transition: ease-in-out 0.5s;
+                overflow: hidden;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            &__vinyls {
+                width: 100%;
+                position: relative;
+                left: -10%;
+            }
+            .cover {
+                background-image: url("../sources/images/Background/I.Background\ \(1\).jpg");
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                background-position: 50% 0;
+                background-size: cover;
+                height: 400px;
+            }
+            .background {
+                background-color: #ffffb3;
+            }
+            .dot {
+                background-image: url("../sources/images/Background/Dots.svg");
+                background-attachment: fixed;
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                overflow: hidden;
+                overflow-x: hidden;
+            }
+        }
+    }
+    .high {
+        height: fit-content 1050px;
+        overflow: hidden;
+        overflow-x: hidden;
+    }
+    .low {
+        height: 500px;
+        overflow: hidden;
+        overflow-x: hidden;
+    }
+    @media screen and (max-width: 800px) {
+        .high {
+            height: fit-content 400px;
+            overflow: hidden;
+            overflow-x: hidden;
+        }
+        .low {
+            height: 400px;
+            overflow: hidden;
+            overflow-x: hidden;
+        }
+    }
+    .chunk__content {
+        width: 100%;
+        height: fit-content 500px;
+        display: flex;
+        flex-flow: row;
+        flex-direction: row;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .chunk__vinyl {
+            width: 33%;
+            height: auto;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-flow: row;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            .vinyl__cover {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                transition: .5s ease-in-out;
+            }
+            .vinyl__lp {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                left: 0%;
+                transition: .5s ease-in-out;
+                margin-bottom: 25px;
+            }
+            .vinyl__cover:hover {
+                width: 110%;
+                transition: .5s ease-in-out;
+            }
+
+            .vinyl__player{
+                margin-top: 15%;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .chunk__vinyl {
+                width: 100%;
+                height: auto;
+                justify-content: center;
+                -ms-flex-align: center;
+                align-items: center;
+                position: relative;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-flow: row;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .vinyl__cover {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    z-index: 10;
+                }
+                .vinyl__lp {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    &__suscription {
+        background-color: #ff0090;
+        height: fit-content 300px;
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        @media screen and (max-width: 400px){
+            input{
+                width: 75%;
+            }
+
+            button{
+                size: 25%;
+            }
+        }
+    }
+}

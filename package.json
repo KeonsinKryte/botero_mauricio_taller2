@@ -1,0 +1,16 @@
+{
+  "name": "botero_mauricio_taller1",
+  "version": "0.0.1",
+  "description": "Vinyl server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mauricio Botero Vallejo KeonsinKryte 2018",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.18.4"
+  }
+}

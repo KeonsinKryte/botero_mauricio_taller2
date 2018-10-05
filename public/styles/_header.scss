@@ -1,0 +1,121 @@
+$vnyl-color: #ff0090;
+.header {
+    background-image: url("../sources/images/Background/I.Background\ \(2\).jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    height: 740px;
+    z-index: 5000;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    left: 0;
+    &__wrapper {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+        width: 40%;
+        left: 0;
+    }
+    &__text {
+        width: 100%;
+        text-align: center;
+        z-index: 20;
+    }
+    &__button {
+        width: fit-content 100px;
+        z-index: 30;
+        font-size: 25px;
+        background: none;
+        border: 2px solid;
+        border-bottom-width: 4px;
+        font: inherit;
+        letter-spacing: inherit;
+        margin: 1em;
+        padding: 1em 2em;
+        text-transform: inherit;
+        transition: color 1s;
+        $color: #82f6d8;
+        color: $color;
+        &:hover {
+            animation: stripes-move 0.75s infinite linear;
+            background: repeating-linear-gradient(45deg, $color 0, $color 0.25em, transparent 0.25em, transparent .5em);
+            color: white;
+        }
+    }
+    @keyframes stripes-move {
+        100% {
+            background-position: 5em 0px;
+        }
+    }
+    &__button-wrapper{
+        display: flex;
+        justify-content: center;
+        width: 35%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        background-image: url("../sources/images/Background/I.Background\ \(1\).png");
+        background-size: cover;
+        background-position: center;
+        padding: 25px;
+        height: 400px;
+        z-index: 100;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        left: 0;
+        background-position: center;
+        &__wrapper {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            left: 0;
+        }
+        &__text {
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+            font-size: 3vh;
+        }
+        &__button {
+            width: fit-content 100px;
+            z-index: 30;
+            background: none;
+            border: 2px solid;
+            border-bottom-width: 4px;
+            font: inherit;
+            letter-spacing: inherit;
+            margin: 1em;
+            padding: 1em 2em;
+            text-transform: inherit;
+            transition: color 1s;
+            $color: #82f6d8;
+            color: $color;
+            &:hover {
+                animation: stripes-move 0.75s infinite linear;
+                background: repeating-linear-gradient(45deg, $color 0, $color 0.25em, transparent 0.25em, transparent .5em);
+                color: adjust-hue($color, 180);
+            }
+        }
+        @keyframes stripes-move {
+            100% {
+                background-position: 5em 0px;
+            }
+        }
+
+        &__button-wrapper{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
