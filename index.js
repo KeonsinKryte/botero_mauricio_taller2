@@ -55,7 +55,7 @@ app.get('/contact', function (request, response) {
 });
 
 app.get('/shop', function (request, response) {
-    response.send('Shop');
+    response.render('shop');
 });
 
 app.get('/shop/:product', function (request, response) {
