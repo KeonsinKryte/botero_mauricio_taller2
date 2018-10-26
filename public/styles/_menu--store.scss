@@ -1,5 +1,5 @@
 $vnyl-color: #ff0090;
-.menu--shop {
+.menu--store {
     display: flex;
     justify-content: flex-start;
     padding: 25px;
@@ -198,7 +198,7 @@ $vnyl-color: #ff0090;
 }
 
 @media screen and (max-width: 800px) {
-    .menu--shop {
+    .menu--store {
         display: flex;
         justify-content: flex-start;
         padding: 25px;

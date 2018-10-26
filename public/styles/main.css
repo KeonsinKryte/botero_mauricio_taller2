@@ -5,6 +5,11 @@
 }
 
 @font-face {
+  font-family: 'HelveticaLightCond';
+  src: url("../sources/fonts/HelveticaLTStd/HelveticaLTStd-LightCond.otf");
+}
+
+@font-face {
   font-family: 'Eksell-large';
   src: url("../sources/fonts/EksellDisplay/Eksell Display Large.otf");
 }
@@ -48,6 +53,27 @@ h4 {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+h5 {
+  font-family: "Eksell-small";
+  font-weight: 100;
+  font-size: 2vw;
+  color: #666666;
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h6 {
+  font-family: "HelveticaLightCond";
+  font-size: 2vw;
+  color: #ff0090;
+  text-align: center;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 p {
@@ -513,7 +539,7 @@ button:hover {
   }
 }
 
-.menu--shop {
+.menu--store {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -527,7 +553,7 @@ button:hover {
   overflow-x: hidden;
 }
 
-.menu--shop a {
+.menu--store a {
   text-decoration: none;
   color: #232323;
   font-family: "Eksell-large";
@@ -539,16 +565,16 @@ button:hover {
   transition: color 0.3s ease;
 }
 
-.menu--shop a:hover {
+.menu--store a:hover {
   color: #ff0090;
 }
 
-.menu--shop__logo {
+.menu--store__logo {
   width: 275px;
   height: auto;
 }
 
-.menu--shop__toggle {
+.menu--store__toggle {
   display: block;
   position: absolute;
   top: 50px;
@@ -560,7 +586,7 @@ button:hover {
        user-select: none;
 }
 
-.menu--shop__toggle input {
+.menu--store__toggle input {
   display: block;
   width: 50px;
   height: 50px;
@@ -573,7 +599,7 @@ button:hover {
   -webkit-touch-callout: none;
 }
 
-.menu--shop__toggle span {
+.menu--store__toggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -590,35 +616,35 @@ button:hover {
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-.menu--shop__toggle span:first-child {
+.menu--store__toggle span:first-child {
   -webkit-transform-origin: 0% 0%;
           transform-origin: 0% 0%;
 }
 
-.menu--shop__toggle span:nth-last-child(2) {
+.menu--store__toggle span:nth-last-child(2) {
   -webkit-transform-origin: 0% 100%;
           transform-origin: 0% 100%;
 }
 
-.menu--shop__toggle input:checked ~ span {
+.menu--store__toggle input:checked ~ span {
   opacity: 1;
   -webkit-transform: rotate(45deg) translate(-2px, -1px);
           transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-.menu--shop__toggle input:checked ~ span:nth-last-child(3) {
+.menu--store__toggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
           transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-.menu--shop__toggle input:checked ~ span:nth-last-child(2) {
+.menu--store__toggle input:checked ~ span:nth-last-child(2) {
   -webkit-transform: rotate(-45deg) translate(0, -1px);
           transform: rotate(-45deg) translate(0, -1px);
 }
 
-.menu--shop__links {
+.menu--store__links {
   position: absolute;
   width: 300px;
   margin: -100px 0 0 -300px;
@@ -638,18 +664,18 @@ button:hover {
   overflow-x: hidden;
 }
 
-.menu--shop__links li {
+.menu--store__links li {
   padding: 10px 0;
   font-size: 35px;
 }
 
-.menu--shop__toggle input:checked ~ ul {
+.menu--store__toggle input:checked ~ ul {
   -webkit-transform: none;
           transform: none;
 }
 
 @media screen and (max-width: 800px) {
-  .menu--shop a {
+  .menu--store a {
     text-decoration: none;
     color: #232323;
     font-family: "Eksell-large";
@@ -660,15 +686,15 @@ button:hover {
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
   }
-  .menu--shop a:hover {
+  .menu--store a:hover {
     color: #ff0090;
   }
-  .menu--shop__logo {
+  .menu--store__logo {
     width: 200px;
     height: auto;
     z-index: 3000;
   }
-  .menu--shop__toggle {
+  .menu--store__toggle {
     display: block;
     position: absolute;
     top: 50px;
@@ -679,7 +705,7 @@ button:hover {
      -ms-user-select: none;
          user-select: none;
   }
-  .menu--shop__toggle input {
+  .menu--store__toggle input {
     display: block;
     width: 50px;
     height: 50px;
@@ -691,7 +717,7 @@ button:hover {
     z-index: 2;
     -webkit-touch-callout: none;
   }
-  .menu--shop__toggle span {
+  .menu--store__toggle span {
     display: block;
     width: 33px;
     height: 4px;
@@ -707,30 +733,30 @@ button:hover {
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
-  .menu--shop__toggle span:first-child {
+  .menu--store__toggle span:first-child {
     -webkit-transform-origin: 0% 0%;
             transform-origin: 0% 0%;
   }
-  .menu--shop__toggle span:nth-last-child(2) {
+  .menu--store__toggle span:nth-last-child(2) {
     -webkit-transform-origin: 0% 100%;
             transform-origin: 0% 100%;
   }
-  .menu--shop__toggle input:checked ~ span {
+  .menu--store__toggle input:checked ~ span {
     opacity: 1;
     -webkit-transform: rotate(45deg) translate(-2px, -1px);
             transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
   }
-  .menu--shop__toggle input:checked ~ span:nth-last-child(3) {
+  .menu--store__toggle input:checked ~ span:nth-last-child(3) {
     opacity: 0;
     -webkit-transform: rotate(0deg) scale(0.2, 0.2);
             transform: rotate(0deg) scale(0.2, 0.2);
   }
-  .menu--shop__toggle input:checked ~ span:nth-last-child(2) {
+  .menu--store__toggle input:checked ~ span:nth-last-child(2) {
     -webkit-transform: rotate(-45deg) translate(0, -1px);
             transform: rotate(-45deg) translate(0, -1px);
   }
-  .menu--shop__links {
+  .menu--store__links {
     position: absolute;
     width: 300px;
     margin: -100px 0 0 -300px;
@@ -749,25 +775,25 @@ button:hover {
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     overflow-x: hidden;
   }
-  .menu--shop__links li {
+  .menu--store__links li {
     padding: 10px 0;
     font-size: 35px;
   }
-  .menu--shop__toggle input:checked ~ ul {
+  .menu--store__toggle input:checked ~ ul {
     -webkit-transform: none;
             transform: none;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .menu--shop__logo {
+  .menu--store__logo {
     width: 150px;
     height: auto;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .menu--shop {
+  .menu--store {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1535,7 +1561,7 @@ button:hover {
   src: url("../sources/fonts/EksellDisplay/Eksell Display Large.otf");
 }
 
-.footer--shop {
+.footer--store {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1544,17 +1570,17 @@ button:hover {
   background-color: white;
 }
 
-.footer--shop ul {
+.footer--store ul {
   list-style: none;
   margin: 0;
   overflow: hidden;
 }
 
-.footer--shop li {
+.footer--store li {
   float: left;
 }
 
-.footer--shop li a {
+.footer--store li a {
   display: block;
   color: #ff0090;
   text-align: center;
@@ -1568,13 +1594,13 @@ button:hover {
   opacity: 0.5;
 }
 
-.footer--shop li a:hover {
+.footer--store li a:hover {
   opacity: 1;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
-.footer--shop li img {
+.footer--store li img {
   height: 25px;
   width: auto;
   opacity: 0.5;
@@ -1582,14 +1608,14 @@ button:hover {
   transition: 0.5s ease-in-out;
 }
 
-.footer--shop li img:hover {
+.footer--store li img:hover {
   opacity: 1;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 400px) {
-  .footer--shop {
+  .footer--store {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
@@ -1598,8 +1624,115 @@ button:hover {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .footer--shop li {
+  .footer--store li {
     text-align: center;
   }
+}
+
+.products {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.products__content {
+  width: 100%;
+  height: -webkit-fit-content 500px;
+  height: -moz-fit-content 500px;
+  height: fit-content 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products__content .product {
+  width: 33%;
+  height: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.products__content .product__cover {
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.products__content .product__cover:hover {
+  width: 75%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.products__content .product__LP {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  margin-bottom: 25px;
+}
+
+.products__content .product__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.products__content .product__info h2 {
+  font-size: 2vw;
+  margin: 0;
+}
+
+.products__content .product__info h6::before {
+  content: "$ ";
+}
+
+.products a {
+  text-decoration: none;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 /*# sourceMappingURL=main.css.map */
