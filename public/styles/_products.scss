@@ -1,5 +1,7 @@
 .products {
+    max-width: 1200px;
     width: 100%;
+    margin: auto;
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -23,20 +25,18 @@
             top: 0;
             left: 0;
             display: flex;
-            flex-flow: column;
+            flex-flow: row;
+            flex-direction: row;
             flex-wrap: wrap;
             margin-bottom: 25px;
             &__cover {
-                width: 50%;
+                width: 100%;
                 height: auto;
                 position: relative;
                 top: 0;
                 left: 0;
                 z-index: 1;
-                transition: .5s ease-in-out;
-            }
-            &__cover:hover {
-                width: 75%;
+                transform: translate(35px);
                 transition: .5s ease-in-out;
             }
             &__LP {
@@ -44,23 +44,30 @@
                 height: auto;
                 position: absolute;
                 left: 0%;
+                top: 0%;
+                z-index: -500;
                 transition: .5s ease-in-out;
                 margin-bottom: 25px;
+            }
+            &__cover:hover {
+                transform: translate(-20px);
+                transition: .5s ease-in-out;
             }
             &__info {
                 display: flex;
                 flex-flow: column;
-                h2{
-                    font-size: 2vw;
+                width: 100%;
+                h2 {
+                    font-size: 2vh;
                     margin: 0;
                 }
-                h6::before{
+                h6::before {
                     content: "$ ";
                 }
             }
         }
     }
-    a{
+    a {
         text-decoration: none;
         text-decoration-line: none;
     }

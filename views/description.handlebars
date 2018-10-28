@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vnyl | {{product__name}}</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    <link rel="stylesheet" media="(max-width: 400px)" href="/styles/main.css">
+    <link rel="stylesheet" media="(max-width: 800px)" href="/styles/main.css">
+</head>
+
+<body>
+    {{>menu--store}}
+
+    <section class="product">
+        <div class="product-chunk__left">
+            <div class="product__img">
+                <img class="product__cover" src="{{product__imgCover}}" alt="{{product__name}} Cover">
+                <img class="product__LP" src="{{product__imgLP}}" alt="{{product__name}} LP">
+            </div>
+            <iframe class="product__spotify" src="https://open.spotify.com/embed/album/{{product__spotify}}" width="350"
+                height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+            </iframe>
+        </div>
+    </section>
+
+    {{>footer--store}}
+</body>
+
+</html>

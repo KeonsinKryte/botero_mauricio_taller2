@@ -58,7 +58,7 @@ h4 {
 h5 {
   font-family: "Eksell-small";
   font-weight: 100;
-  font-size: 2vw;
+  font-size: 2vh;
   color: #666666;
   display: block;
   margin: 0;
@@ -68,7 +68,7 @@ h5 {
 
 h6 {
   font-family: "HelveticaLightCond";
-  font-size: 2vw;
+  font-size: 2vh;
   color: #ff0090;
   text-align: center;
   display: block;
@@ -1630,7 +1630,9 @@ button:hover {
 }
 
 .products {
+  max-width: 1200px;
   width: 100%;
+  margin: auto;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -1675,28 +1677,26 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 25px;
 }
 
 .products__content .product__cover {
-  width: 50%;
+  width: 100%;
   height: auto;
   position: relative;
   top: 0;
   left: 0;
   z-index: 1;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-}
-
-.products__content .product__cover:hover {
-  width: 75%;
+  -webkit-transform: translate(35px);
+          transform: translate(35px);
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
@@ -1706,9 +1706,18 @@ button:hover {
   height: auto;
   position: absolute;
   left: 0%;
+  top: 0%;
+  z-index: -500;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   margin-bottom: 25px;
+}
+
+.products__content .product__cover:hover {
+  -webkit-transform: translate(-20px);
+          transform: translate(-20px);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 .products__content .product__info {
@@ -1719,10 +1728,11 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  width: 100%;
 }
 
 .products__content .product__info h2 {
-  font-size: 2vw;
+  font-size: 2vh;
   margin: 0;
 }
 
@@ -1734,5 +1744,113 @@ button:hover {
   text-decoration: none;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+.product {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-bottom: 50px;
+}
+
+.product .product-chunk {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.product .product-chunk__left {
+  width: 50%;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.product .product-chunk__right {
+  width: 50%;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.product__img {
+  margin-bottom: 15px;
+}
+
+.product__cover {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-transform: translate(35px);
+          transform: translate(35px);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.product__LP {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: -5;
+  top: 19%;
+  left: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.product__cover:hover {
+  -webkit-transform: translate(-20px);
+          transform: translate(-20px);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 }
 /*# sourceMappingURL=main.css.map */
