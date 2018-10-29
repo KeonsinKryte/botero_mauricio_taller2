@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <link rel="stylesheet" media="(max-width: 400px)" href="/styles/main.css">
     <link rel="stylesheet" media="(max-width: 800px)" href="/styles/main.css">
+    <link rel="icon" href="/sources/images/products/{{product__artist}}/I.{{product__name}} - Cover.jpg">
 </head>
 
 <body>
@@ -22,6 +23,39 @@
             <iframe class="product__spotify" src="https://open.spotify.com/embed/album/{{product__spotify}}" width="350"
                 height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
             </iframe>
+        </div>
+
+        <div class="product-chunk__right">
+            <article class="product__text">
+                <h5>{{product__name}}</h5>
+                <h2>{{product__artist}}</h2>
+                <h6>{{product__price}}</h6>
+            </article>
+            <article class="product__songs">
+                <article class="product__songs-container">
+                    {{#each product__songs}}
+                    <h5>{{disc__number}}{{disc__name}}</h5>
+                    <div class="product__song">
+                        {{#each disc__songs}}
+                        <div class="disc__song">
+                            <div class="disc__feat">
+                                <h6>{{disc__song__name}}</h6>
+                                <p>{{disc__song__description}}</p>
+                            </div>
+                            <h6>{{disc__song__lenght}}</h6>
+                        </div>
+                        {{/each}}
+                        <div class="disc__song">
+                            <div class="disc__feat">
+                                <h6>{{song__name}}</h6>
+                                <p>{{song__description}}</p>
+                            </div>
+                            <h6>{{song__lenght}}</h6>
+                        </div>
+                    </div>
+                    {{/each}}
+                </article>
+            </article>
         </div>
     </section>
 
