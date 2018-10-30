@@ -61,25 +61,105 @@ app.get('/contact', function (request, response) {
 });
 
 app.get('/store', function (request, response) {
+    var product__name = request.query.product__name;
+
     const products = db.collection('Products');
-    products.find({}).toArray(function (err, docs) {
-        if (err) {
-            console.error(err);
-            return;
+    var filter__type = request.query.product__filterType;
+    var filter__value = request.query.product__filterValue;
+
+    if ((filter__type !== null && filter__value !== null) && (filter__type !== undefined && filter__value !== undefined) && (filter__type !== "" && filter__value !== "")) {
+        if (filter__type === "year" || filter__type === "Year") {
+            products.find({
+                product__year: filter__value,
+
+            }).toArray(function (err, docs) {
+                console.log(filter__type);
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+
+                var context = {
+                    products: docs,
+                };
+
+                var product = findObjectByKey(docs, 'product__name', product__name);
+
+                if (product !== null) {
+                    response.render('description', product);
+                } else {
+                    response.render('store', context);
+                }
+            });
         }
+        if (filter__type === "artist" || filter__type === "Artist") {
+            products.find({
+                product__artist: filter__value,
 
-        var context = {
-            products: docs,
-        };
+            }).toArray(function (err, docs) {
+                console.log(filter__type);
+                if (err) {
+                    console.error(err);
+                    return;
+                }
 
-        var product__name = request.query.product__name;
-        var product = findObjectByKey(docs, 'product__name', product__name);
+                var context = {
+                    products: docs,
+                };
 
-        if (product !== null) {
-            response.render('description', product);
-        } else {
-            response.render('store', context);
+                var product = findObjectByKey(docs, 'product__name', product__name);
+
+                if (product !== null) {
+                    response.render('description', product);
+                } else {
+                    response.render('store', context);
+                }
+            });
         }
-    });
+        if (filter__type === "price" || filter__type === "Price") {
+            products.find({
+                product__price: { $lt: parseFloat(filter__value) },
+
+            }).toArray(function (err, docs) {
+                console.log(filter__type);
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+
+                var context = {
+                    products: docs,
+                };
+
+                var product = findObjectByKey(docs, 'product__name', product__name);
+
+                if (product !== null) {
+                    response.render('description', product);
+                } else {
+                    response.render('store', context);
+                }
+            });
+        }
+    } else {
+        products.find({}).toArray(function (err, array) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            var context = {
+                products: array,
+            };
+
+            var product = findObjectByKey(array, 'product__name', product__name);
+
+            if (product !== null) {
+                response.render('description', product);
+            } else {
+                response.render('store', context);
+            }
+        });
+    }
+
 });
 app.listen(5500);

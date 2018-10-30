@@ -163,25 +163,25 @@ button {
   text-transform: inherit;
   -webkit-transition: color 1s;
   transition: color 1s;
-  color: #82f6d8;
+  color: #666666;
 }
 
 button:hover {
-  -webkit-animation: stripes-move 0.75s infinite linear;
-          animation: stripes-move 0.75s infinite linear;
-  background: repeating-linear-gradient(45deg, #82f6d8 0, #82f6d8 0.25em, transparent 0.25em, transparent 0.5em);
-  color: #f682a0;
+  -webkit-animation: stripes-move 1.25s infinite linear;
+          animation: stripes-move 1.25s infinite linear;
+  background: repeating-linear-gradient(45deg, #ff0090 0, #ff0090 0.125em, transparent 0.125em, transparent 1.25em);
+  color: #ff0090;
 }
 
 @-webkit-keyframes stripes-move {
   100% {
-    background-position: 5em 0px;
+    background-position: 10em 0px;
   }
 }
 
 @keyframes stripes-move {
   100% {
-    background-position: 5em 0px;
+    background-position: 10em 0px;
   }
 }
 
@@ -1751,6 +1751,7 @@ button:hover {
 .product__text {
   text-align: left;
   height: fit-content(200px);
+  margin-right: 50px;
 }
 
 .product__text h2 {
@@ -1823,6 +1824,26 @@ button:hover {
   padding-left: 25px;
   text-align: left;
   margin: 5px;
+}
+
+.product__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.product__button {
+  text-align: right;
+  right: 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .disc__song {
@@ -1981,5 +2002,193 @@ button:hover {
   text-decoration: none;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+.bag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 25px;
+  z-index: 9999;
+  background-color: #ff0090;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: fixed;
+}
+
+.bag__toggle {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.bag__toggle input {
+  display: block;
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  bottom: -35px;
+  right: 0;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+.bag__toggle span {
+  display: block;
+  width: 50px;
+  height: 100px;
+  position: relative;
+  background-color: #ff0090;
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.bag__links {
+  position: absolute;
+  width: 300px;
+  height: 350px;
+  margin: -525px 0 0 -330px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transform: translate(200%, 0);
+          transform: translate(200%, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  overflow-x: hidden;
+}
+
+.bag__links li {
+  padding: 10px 0;
+  font-size: 35px;
+}
+
+.bag__toggle input:checked ~ ul {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.bag__shopping {
+  color: white;
+  width: 50%;
+  height: auto;
+  padding: 12px;
+}
+
+.bag__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.bag__total {
+  color: white;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form h1 {
+  color: #666666;
+}
+
+.form .product__filterType {
+  color: #ff0090;
+  background-color: white;
+  width: 300px;
+  border-bottom-color: #ff0090;
+}
+
+.form .product__filterType::-webkit-input-placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterType:-ms-input-placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterType::-ms-input-placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterType::placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterValue {
+  color: #ff0090;
+  background-color: white;
+  width: 300px;
+  border-bottom-color: #ff0090;
+}
+
+.form .product__filterValue::-webkit-input-placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterValue:-ms-input-placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterValue::-ms-input-placeholder {
+  color: #ff0090;
+  opacity: .5;
+}
+
+.form .product__filterValue::placeholder {
+  color: #ff0090;
+  opacity: .5;
 }
 /*# sourceMappingURL=main.css.map */

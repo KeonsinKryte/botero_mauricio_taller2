@@ -13,6 +13,8 @@
 
 <body>
     {{>menu--store}}
+    
+    {{>bag}}
 
     <section class="product">
         <div class="product-chunk__left">
@@ -26,11 +28,16 @@
         </div>
 
         <div class="product-chunk__right">
-            <article class="product__text">
-                <h5>{{product__name}}</h5>
-                <h2>{{product__artist}}</h2>
-                <h6>{{product__price}}</h6>
-            </article>
+            <header class="product__header">
+                <article class="product__text">
+                    <h5>{{product__name}}</h5>
+                    <h2>{{product__artist}}</h2>
+                    <h6>{{product__price}}</h6>
+                </article>
+                <article class="product__button">
+                    <button>Agregar al carrito</button>
+                </article>
+            </header>
             <article class="product__songs">
                 <article class="product__songs-container">
                     {{#each product__songs}}
@@ -60,6 +67,8 @@
     </section>
 
     {{>footer--store}}
+    
+    <script type="text/javascript" src="/scripts/bag.js"></script>
 </body>
 
 </html>

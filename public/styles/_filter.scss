@@ -1,0 +1,30 @@
+.form {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    h1{
+        color: #666666;
+    }
+    .product__filterType {
+        color: #ff0090;
+        background-color: white;
+        width: 300px;
+        border-bottom-color: #ff0090;
+    }
+    .product__filterType::placeholder {
+        color: #ff0090;
+        opacity: .5;
+    }
+    .product__filterValue {
+        color: #ff0090;
+        background-color: white;
+        width: 300px;
+        border-bottom-color: #ff0090;
+    }
+    .product__filterValue::placeholder {
+        color: #ff0090;
+        opacity: .5;
+    }
+}

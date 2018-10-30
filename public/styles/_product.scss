@@ -47,7 +47,6 @@
             padding-right: 50px;
         }
     }
-    &__img {}
     &__cover {
         width: 95%;
         height: auto;
@@ -74,6 +73,7 @@
     &__text {
         text-align: left;
         height: fit-content(200px);
+        margin-right: 50px;
         h2 {
             text-align: left;
             font-size: 2.75vw;
@@ -128,6 +128,16 @@
             margin: 5px;
         }
     }
+    &__header {
+        display: flex;
+        align-content: space-between;
+        flex-flow: row;
+    }
+    &__button {
+        text-align: right;
+        right: 0;
+        align-items: flex-end;
+    }
 }
 
 .disc {
@@ -146,12 +156,12 @@
             margin: 5px;
         }
     }
-    &__feat{
+    &__feat {
         display: flex;
         flex-flow: column;
         align-content: initial;
         text-align: left;
-        h6{
+        h6 {
             text-align: left;
         }
     }

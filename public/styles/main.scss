@@ -139,18 +139,19 @@ button {
     padding: 1em 2em;
     text-transform: inherit;
     transition: color 1s;
-    $color: #82f6d8;
+    $color: #666666;
+    $vnyl-color: #ff0090;  
     color: $color;
     &:hover {
-        animation: stripes-move 0.75s infinite linear;
-        background: repeating-linear-gradient(45deg, $color 0, $color 0.25em, transparent 0.25em, transparent .5em);
-        color: adjust-hue($color, 180);
+        animation: stripes-move 1.25s infinite linear;
+        background: repeating-linear-gradient(45deg, $vnyl-color 0, $vnyl-color 0.125em, transparent 0.125em, transparent 1.25em);
+        color: $vnyl-color;
     }
 }
 
 @keyframes stripes-move {
     100% {
-        background-position: 5em 0px;
+        background-position: 10em 0px;
     }
 }
 
@@ -246,3 +247,5 @@ button {
 @import "./footer--store";
 @import "./product";
 @import "./products";
+@import "./bag";
+@import "./filter";
