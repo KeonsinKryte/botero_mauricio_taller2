@@ -1,19 +1,22 @@
 window.addEventListener('load', function () {
 
+    var shoppingCart__value = 0;
+
     var shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     if (shoppingCart === null) {
         shoppingCart = [];
     }
 
+    shoppingCart.forEach(function (elem) {
+        bag(elem);
+    });
+
     function shoppingCart__render() {
         shoppingCart.forEach(function (elem) {
-            let total = 0;
-            total += parseFloat(elem.product__price);
+            shoppingCart__value += parseFloat(elem.product__price);
+            document.querySelector('.bag__subtotal').innerText = shoppingCart__value.toFixed(2);
         });
         document.querySelector('.bag__total').innerText = shoppingCart.length;
-        shoppingCart.forEach(function (elem) {
-            bag(elem);
-        });
     }
 
     function bag(elem) {
@@ -50,14 +53,14 @@ window.addEventListener('load', function () {
 
 
         // document.querySelector('.bag__items').innerHTML = null;
-        
+
         document.querySelector('.bag__items').append(article);
         console.log(article);
     }
 
     shoppingCart__render();
 
-    document.querySelectorAll('.product button').forEach(function (elem) {
+    document.querySelectorAll('.product .product__button').forEach(function (elem) {
         elem.addEventListener('click', function (event) {
             event.preventDefault();
             let parent = elem.parentElement;
@@ -72,6 +75,7 @@ window.addEventListener('load', function () {
             shoppingCart.push(product);
             localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
             console.log(shoppingCart);
+            bag(product);
             shoppingCart__render();
         });
     });
