@@ -1,6 +1,8 @@
 var blobs, nBlobs = 16, theta = 0, autoPlay = true,
     colors = ['#67003a', '#600067', '#ff0090', '#201E50', '#b30065'];
 
+var chords = ['D#3', 'D#4', 'D#5', 'E2', 'F#2', 'F#3', 'F34', 'F#5', 'A2', 'A3','A4','A5', 'C3', 'C4', 'C5', 'C6','C#2'];   
+
 function Blob(radius, nSegments, magnitude, color) {
     this.radius = radius;
     this.magnitude = magnitude;
@@ -225,15 +227,21 @@ String.prototype = {
 
         }
 
+        
         if (mouseIsPressed) {
-            tmp[0] = 100 * sin(millis() / 200); // 0 no movement
-            // guitar.triggerAttack("A3");
+            tmp[0] = 100 * sin(millis() / 1000); // 0 no movement
             h += 0.1;
-
+            
             if (h >= 360) {
                 h = 0;
             }
             //   tmp[(mouseX/this.s)<<0] = mouseY-height/2; 
+            document.getElementById('sketch-holder').addEventListener('click', function(){
+                var x =  parseInt(random(chords.length));
+                console.log(x);
+                guitar.triggerAttack(chords[x]);
+                
+            });
         }
 
         tmp[this.ys.length - 1] = 0;
