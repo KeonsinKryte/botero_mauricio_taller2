@@ -1,57 +1,43 @@
-var string;
-
+// string dance
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  string = new String(5);
-  background(255,0,144);
-}
-
-function draw() {
-  fill(255,0,144,20);
-  noStroke();
-  rect(0,0,width,height);
-  
-  translate(0,height/2);
-  
-  string.display();
-  string.update();
-}
-
-var String = function(spacing){
-  this.k = 0.1; // wave speed [0 : 0.9] (h*T/m)
-  this.rest = 1.0; // damping [1.0 : 0]
-  this.s = spacing;
-  this.ys = []; // y positions at time t
-  for(let x=0; x<width; x+=spacing){
-    this.ys.push(0);
+    createCanvas(windowWidth, windowHeight); 
   }
-  this.ysp = this.ys.slice(); // y positions at time t-1
-}
-String.prototype = {
-  display: function(){
+  
+  var t = 0;
+  
+  function draw() {
+    background(255);
     noFill();
-    stroke(255); 
-    strokeWeight(2);
+    strokeWeight(15);
+  
+    amp = map(sin(t/5), -1, 1, 0, 300);
+  
+    stroke(255, 0, 0, 100);
     beginShape();
-    for(let i=1; i<this.ys.length; i++){
-      curveVertex(i*this.s,this.ys[i]);
-    }
+        for(var w = 0; w < width; w += 5) {
+          var h = height / 2;
+          h += amp * sin(w * 0.03 + t * 3 ) *  pow(abs(sin(w * 0.001 + t)), 5);
+          curveVertex(w, h);
+        }    
     endShape();
-  },
-  update: function(){
-    let tmp = [];
-    tmp[0] = 0*sin(millis()/200); // 0 no movement
-    for(let i=1; i<this.ys.length-1; i++){
-      // from the differential equation d2y/dx2 = m/T*d2y/dt2 with finite difference
-      tmp[i] = 2*this.ys[i]-this.ysp[i]+this.k*(this.ys[i+1]+this.ys[i-1]-2*this.ys[i]);
-      tmp[i] *= this.rest;
-    }
-    if(mouseIsPressed){
-        tmp[0] = 50*sin(millis()/200); // 0 no movement
-    //   tmp[(mouseX/this.s)<<0] = mouseY-height/2; 
-    }
-    tmp[this.ys.length-1] = 0;
-    this.ysp = this.ys.slice();
-    this.ys = tmp.slice();
+    
+    stroke(0, 255, 0, 100);
+    beginShape();
+        for(var w = 0; w < width; w += 5) {
+          var h = height / 2;
+          h += amp * sin(w * 0.03 + t * 3 + TWO_PI / 3  ) *  pow(abs(sin(w * 0.001 + t)), 5);
+          curveVertex(w, h);
+        }    
+    endShape();
+    
+    stroke(0, 0, 255, 100);
+    beginShape();
+        for(var w = 0; w < width; w += 5) {
+          var h = height / 2;
+          h += amp * sin(w * 0.03 + t * 3 + 2* TWO_PI / 3 ) *  pow(abs(sin(w * 0.001 + t)), 5);
+          curveVertex(w, h);
+        }    
+    endShape();
+    
+    t += 0.02
   }
-};
