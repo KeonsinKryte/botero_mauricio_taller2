@@ -140,7 +140,7 @@ button {
     text-transform: inherit;
     transition: color 1s;
     $color: #666666;
-    $vnyl-color: #ff0090;  
+    $vnyl-color: #ff0090;
     color: $color;
     &:hover {
         animation: stripes-move 1.25s infinite linear;
@@ -237,6 +237,13 @@ button {
         text-align: center;
         display: block;
     }
+}
+
+#sketch-holder{
+    width: auto;
+    height: 100%;
+    margin: auto;
+    background-color: #ff0090;
 }
 
 @import "./menu";

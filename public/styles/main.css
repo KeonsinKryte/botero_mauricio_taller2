@@ -269,6 +269,13 @@ button:hover {
   }
 }
 
+#sketch-holder {
+  width: auto;
+  height: 100%;
+  margin: auto;
+  background-color: #ff0090;
+}
+
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;

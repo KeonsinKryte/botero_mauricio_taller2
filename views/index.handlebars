@@ -8,18 +8,25 @@
     <link rel="stylesheet" type="text/css" href="./styles/main.css" />
     <link rel="stylesheet" media="(max-width: 400px)" href="./styles/main.css">
     <link rel="stylesheet" media="(max-width: 800px)" href="./styles/main.css">
+    <script src="/scripts/addons/Tone.js"></script>
+    <script src="/scripts/addons/Tonejs-Instruments.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script src="/scripts/canvas.js"></script>
+
 </head>
 
 <body>
     {{>menu}}
 
-    {{>canvas}}
+    <div id='sketch-holder'></div>
 
     <header class="header">
         <section class="header__wrapper">
             <h1 class="header__text">The #Indie way to listen your music</h1>
             <div class="header__button-wrapper">
-                <button type="button" class="header__button"><h4>GET VNYL</h4></button>
+                <button type="button" class="header__button">
+                    <h4>GET VNYL</h4>
+                </button>
             </div>
         </section>
     </header>
@@ -32,10 +39,12 @@
                     <article class="split-chunk__text">
                         <h2 class="split-chunk__title">CHOOSE A #VIBE EVERY MONTH</h2>
                         <p class="split-chunk__paragraph">
-                            Listening to vinyl is about setting the right mood. We give you a bunch of great artists to get started. We update our vibes
+                            Listening to vinyl is about setting the right mood. We give you a bunch of great artists to
+                            get started. We update our vibes
                             monthly.
                         </p>
-                        <h3 class="split-chunk__trends">#DAWES #TOUCHEAMORE #WHY? #DANAFUCHS #SURFERBLOOD #BRIANOWENS #CURATED</h3>
+                        <h3 class="split-chunk__trends">#DAWES #TOUCHEAMORE #WHY? #DANAFUCHS #SURFERBLOOD #BRIANOWENS
+                            #CURATED</h3>
                     </article>
                 </div>
             </article>
@@ -46,7 +55,8 @@
                     <article class="split-chunk__text">
                         <h2 class="split-chunk__title">CREATE YOUR PROFILE</h2>
                         <p class="split-chunk__paragraph">
-                            Tell us about your favorite artists and your appetite for new music. Connect your Spotify, Soundcloud, Instagram, Discogs,
+                            Tell us about your favorite artists and your appetite for new music. Connect your Spotify,
+                            Soundcloud, Instagram, Discogs,
                             Last.fm. Up next...
                         </p>
                     </article>
@@ -60,14 +70,16 @@
             <article class="split-chunk low">
                 <div class="split-chunk__left dot">
                     <div class="split-chunk__mask">
-                        <img id="carousel" class="split-chunk__carousel" src="./sources/images/Vnyl/I.Vnyl - People.png" alt="Carousel">
+                        <img id="carousel" class="split-chunk__carousel" src="./sources/images/Vnyl/I.Vnyl - People.png"
+                            alt="Carousel">
                     </div>
                 </div>
                 <div class="split-chunk__rigth">
                     <article class="split-chunk__text">
                         <h2 class="split-chunk__title">GET READY</h2>
                         <p class="split-chunk__paragraph">
-                            Our team of curators study your music profile to hand-pick new albums you will love. Make sure you've got your record player
+                            Our team of curators study your music profile to hand-pick new albums you will love. Make
+                            sure you've got your record player
                             ready for the amazing vinyl headed your way.
                         </p>
                     </article>
@@ -80,7 +92,8 @@
                     <article class="split-chunk__text">
                         <h2 class="split-chunk__title">FOR $10/MO</h2>
                         <p class="split-chunk__paragraph">
-                            You get 3 diferent vinyls based on the vibes, artists, bands, likes, feed activity from your social network and your music
+                            You get 3 diferent vinyls based on the vibes, artists, bands, likes, feed activity from
+                            your social network and your music
                             preferences. You always gonna get the most accurate music for your taste
                         </p>
                     </article>
@@ -98,12 +111,14 @@
             <article class="chunk__suscription">
                 <h4>Get vnyl in your box</h4>
                 <input class="chunk__input" placeholder="Email" type="text">
-                <button> <h4>SUSCRIBE</h4></button>
+                <button>
+                    <h4>SUSCRIBE</h4>
+                </button>
             </article>
         </section>
     </main>
 
-   {{>footer}}
+    {{>footer}}
 
     <script type="text/javascript" src="./main.js"></script>
 </body>
