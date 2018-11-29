@@ -6,7 +6,7 @@ const hbs = require('express-handlebars');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const mongoUrl = 'mongodb://localhost:27017';
+const mongoUrl = 'mongodb+srv://vnyl-y0aqb.mongodb.net/store';
 
 const mongodbName = 'Vnyl';
 //--------------------
@@ -23,12 +23,21 @@ const mongoClient = new MongoClient(mongoUrl);
 
 var db = null;
 
-mongoClient.connect(function (err) {
-    assert.equal(null, err);
-    console.log("Ok, connected to server");
+MongoClient.connect('mongodb+srv://vnyl-y0aqb.mongodb.net/store',
+    {
+        auth: {
+            user: 'KeonsinKryte',
+            password: 'Keonsin1248Kryte'
+        }
+    }, function(err, client){
+        if(err) throw err;
 
-    db = mongoClient.db(mongodbName);
-});
+        db = client.db(mongodbName);
+
+        app.listen(process.env.PORT || 1234);
+    }
+)
+
 //--------------------
 
 //--------------------
