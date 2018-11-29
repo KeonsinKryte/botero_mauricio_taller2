@@ -1,7 +1,9 @@
 var blobs, nBlobs = 16, theta = 0, autoPlay = true,
     colors = ['#67003a', '#600067', '#ff0090', '#201E50', '#b30065'];
 
-var chords = ['D#3', 'D#4', 'D#5', 'E2', 'F#2', 'F#3', 'F34', 'F#5', 'A2', 'A3','A4','A5', 'C3', 'C4', 'C5', 'C6','C#2'];   
+// var chords = ['D#3', 'D#4', 'D#5', 'E2', 'F#2', 'F#3', 'F34', 'F#5', 'A2', 'A3','A4','A5', 'C3', 'C4', 'C5', 'C6','C#2'];   
+var chords = ['A4', 'B4', 'G4', 'F4', 'A#4', 'G#4', 'F#4'];   
+
 
 function Blob(radius, nSegments, magnitude, color) {
     this.radius = radius;
@@ -81,7 +83,8 @@ Blob.prototype.render = function (offset) {
 
 //____________________________________________________________________________________________
 var guitar = SampleLibrary.load({
-    instruments: 'guitar-electric'
+    instruments: 'guitar-nylon',
+    minify:  true
 });
 
 guitar.toMaster();
@@ -91,6 +94,7 @@ var img;
 var h;
 var s;
 var b;
+var x;
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
@@ -105,6 +109,7 @@ function setup() {
     h = 46;
     s = 100;
     b = 100;
+    x =0;
 
     //__________________________________________________________________________________________________
 
@@ -236,12 +241,7 @@ String.prototype = {
                 h = 0;
             }
             //   tmp[(mouseX/this.s)<<0] = mouseY-height/2; 
-            document.getElementById('sketch-holder').addEventListener('click', function(){
-                var x =  parseInt(random(chords.length));
-                console.log(x);
-                guitar.triggerAttack(chords[x]);
-                
-            });
+            
         }
 
         tmp[this.ys.length - 1] = 0;
@@ -259,7 +259,23 @@ function mouseDragged() {
 
 function mouseReleased() {
     autoPlay = true;
+    x= parseInt(random(chords.length));
+    console.log(x);
+    
 }
+
+function mouseClicked() {
+    document.getElementById('sketch-holder').addEventListener('click', function(){
+        
+            
+            guitar.triggerAttackRelease(chords[x]);
+            
+     
+
+     
+        
+    });
+  }
 
 
 
