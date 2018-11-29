@@ -2270,4 +2270,13 @@ button:hover {
   color: #ff0090;
   opacity: .5;
 }
+
+#text {
+  color: white;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
 /*# sourceMappingURL=main.css.map */

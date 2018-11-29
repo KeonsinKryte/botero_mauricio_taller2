@@ -235,11 +235,7 @@ String.prototype = {
         
         if (mouseIsPressed) {
             tmp[0] = 100 * sin(millis() / 1000); // 0 no movement
-            h += 0.1;
-            
-            if (h >= 360) {
-                h = 0;
-            }
+           
             //   tmp[(mouseX/this.s)<<0] = mouseY-height/2; 
             
         }
